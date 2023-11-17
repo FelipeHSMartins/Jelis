@@ -1,0 +1,126 @@
+<%- include('./partials/header.ejs') %>
+
+
+<% if (recents.length >= 1) { %>
+    <!---- Lista de Leituras Recentes-------->
+<section id="recente" class="py-5">
+    <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-evenly">
+        <h1 class="display-4">Leituras Recentes:</h1>
+        <div class="list-group">
+          <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0 fs-4">Como Ler Livros</h6>
+                <p class="mb-0 opacity-75">Mortimer Adler</p>
+              </div>
+            </div>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0 fs-4">Guerra e Paz</h6>
+                <p class="mb-0 opacity-75">Alexei Tolstoi</p>
+              </div>
+            </div>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0 fs-4">Discursos sobre a Primeira Década de Tito Lívio</h6>
+                <p class="mb-0 opacity-75">Nicolau Maquiavel</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+</section>
+<% } else { %>
+    <!---- Hero-------->
+<section id="hero">
+
+    <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+          <div class="col-10 col-sm-8 col-lg-6">
+            <img src="/images/comoLerLivrosCapa.jpg" class="d-block mx-lg-auto img-fluid" alt="Capa do livro Como Ler Livros de Mortimer Adler" height="200" loading="lazy">
+          </div>
+          <div class="col-lg-6">
+            <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Faça suas notas de leitura de forma fácil e organizada!</h1>
+            <p class="lead">Registre suas leituras de forma fácil! Explore os livros recomendados por Mortimer Adler ou registre seus próprios livros e faça suas notas agora mesmo!</p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+              <a href="/livros"><button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Lista de Livros</button></a>
+              <a href="/sobre"><button type="button" class="btn btn-outline-secondary btn-lg px-4">Sobre Jelis</button></a>
+            </div>
+          </div>
+        </div>
+    </div>
+</section>
+<% } %>
+
+
+<!---- Recursos------->
+<section id="recursos">
+    <div class="container px-4 py-5" id="hanging-icons">
+        <h2 class="pb-2 border-bottom">Recursos</h2>
+        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+          <div class="col d-flex align-items-start">
+            <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+              <img src="/images/book-half.svg" alt="Book Icon" height="25" width="25">
+            </div>
+            <div>
+              <h3 class="fs-2 text-body-emphasis">Minhas Leituras</h3>
+              <img class="res-img my-2" src="/images/take-notes.jpg" alt="mulher tomando notas">
+              <p>Visualize facilmente as obras que já começou, revise suas anotações específicas para cada livro e organize suas ideias por categorias personalizadas que você mesmo nomeia.</p>
+              <a href="#" class="btn btn-primary">
+                Acessar
+              </a>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                <img src="/images/bookmark-plus-fill.svg" alt="Book Icon" height="25" width="25">
+            </div>
+            <div>
+              <h3 class="fs-2 text-body-emphasis">Começar Leitura</h3>
+              <img class="res-img my-2" src="/images/read-book.jpg" alt="mulher lendo livro">
+              <p>Iniciar uma nova leitura é simples: adicione um novo livro à sua lista ativa. Com essa função, você registra os detalhes do livro que está prestes a explorar. </p>
+              <a href="/adLeitura" class="btn btn-primary">
+                Começar
+              </a>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                <img src="/images/file-plus-fill.svg" alt="ícone adicionar arquivo" height="25" width="25">
+            </div>
+            <div>
+              <h3 class="fs-2 text-body-emphasis">Adicionar Livros</h3>
+              <img class="res-img my-2" src="/images/add-book.jpg" alt="pessoa pegando livro">
+              <p>Além de começar novas leituras dos livros recomendados por Adler, você pode também adicionar seus próprios livros à lista. Com esta funcionalidade, personalize sua biblioteca literária incluindo obras de sua escolha.</p>
+              <a href="/adLivro" class="btn btn-primary">
+                Adicionar
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
+
+
+
+<!---- Sobre------->
+<section id="sobre">
+    <div class="my-5">
+        <div class="p-5 text-center">
+          <div class="container py-5">
+            <h1 class="text-body-emphasis">Sobre Jelis</h1>
+            <p class="col-lg-8 mx-auto lead">
+                Nosso objetivo é oferecer a você uma plataforma intuitiva e personalizada para registrar suas experiências de leitura. Aqui, você pode catalogar seus livros, criar notas detalhadas e acompanhar suas leituras ativas. Além disso, a inclusão dos livros da lista de recomendações de Mortimer Adler amplia seu horizonte literário.
+                <br><br>
+                Saiba mais sobre o projeto: <a href="/sobre">clique aqui!</a>
+            </p>
+          </div>
+        </div>
+      </div>
+</section>
+
+<%- include('./partials/footer.ejs') %>

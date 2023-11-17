@@ -1,0 +1,42 @@
+<%- include('./partials/header.ejs') %>
+
+
+
+<section id="search" class="p-5">
+    <!---- Resultados de Pesquisa -------->
+    <h1 class="ms-5">Resultados da Pesquisa: </h1>
+    
+    <!---- Barra de Pesquisa -------->
+    <div class="container mt-5">
+        <form class="d-flex" role="search" method="get" action="/pesquisar">
+            <input name="q" class="form-control me-2" type="search" placeholder="Pesquisar Livro" aria-label="Search" autofocus autocomplete="off">
+            <button class="btn btn-outline-primary" type="submit">Pesquisar</button>
+        </form>
+    </div>
+
+    <% if (livros.length != 0) { %>
+    <!---- Encontrou Resultados -------->
+    <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
+        <div class="list-group w-75">
+            <% livros.forEach((livro) => { %>
+                <a href="/livro?id=<%= livro.id %>" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                    <div class="d-flex gap-2 w-100 justify-content-center">
+                        <div class=" px-5 text-center">
+                            <h6 class="mb-0 fs-4"><%= livro.titulo %></h6>
+                            <p class="mb-0 opacity-75"><%= livro.nome %> - <%= livro.periodo %></p>
+                        </div>
+                    </div>
+                </a>
+            <% }); %>
+        </div>
+    </div>
+    <% } else { %>
+        <!---- Pesquisa sem Resultados -------->
+        <div class="container my-5">
+            <h2>Sem resultados para sua pesquisa.</h2>
+        </div>
+    <% } %>
+</section>
+
+
+<%- include('./partials/footer.ejs') %>

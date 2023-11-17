@@ -1,0 +1,137 @@
+id,nome,ano_aprox,periodo
+201,Homero,-900,IX a.C.
+202,Velho Testamento,-1200,1200 a.C
+203,Ésquilo,-456,525-456 a.C
+204,Sófocles,-406,495-406 a.C
+205,Heródoto,-425,484-425 a.C
+206,Eurípides,-406,485-406 a.C
+207,Tucídides,-400,460-400 a.C
+208,Hipócrates,-377,460-377 a.C
+209,Aristófanes,-380,448-380 a.C
+210,Platão,-347,427-347 a.C
+211,Aristóteles,-322,384-322 a.C
+212,Epicuro,-270,341-270 a.C
+213,Euclides,-300,300 a.C
+214,Arquimedes,-212,287-212 a.C
+215,Apolônio de Perga,-240,240 a.C
+216,Cícero,-43,106-43 a.C
+217,Lucrécio,-55,95-55 a.C
+218,Virgílio,-19,70-19 a.C
+219,Horácio,-8,65-8 a.C
+220,Lívio,17,58 a.C – 17 d.C
+221,Ovídio,17,43 a.C – 17 d.C
+222,Plutarco,120,45-120
+223,Tácito,117,55-117
+224,Nicômaco de Gerasa,100,100
+225,Epicteto,120,60-120
+226,Ptolomeu,178,100-178
+227,Luciano,178,100-178
+228,Marco Aurélio,180,121-180
+229,Galeno,200,130-200
+230,Novo Testamento,100,Século I
+231,Plotino,270,205-270
+232,Santo Agostinho,430,354-430
+233,A Canção de Rolando,1040,século XII
+234,A Canção do Nibelungo,1200,século XIII
+235,A Saga de Njal,1270,século XIII
+236,Santo Tomás de Aquino,1274,1225-1274
+237,Dante Alighieri,1321,1265-1321
+238,Geoffrey Chaucer,1400,1340-1400
+239,Leonardo da Vinci,1519,1452-1519
+240,Nicolau Maquiavel,1527,1469-1527
+241,Erasmo de Rotterdam,1536,1469-1536
+242,Nicolau Copérnico,1543,1473-1543
+243,Thomas More,1535,1478-1535
+244,Martinho Lutero,1546,1483-1546
+245,Gargântua e Pantagruel,1553,1495-1553
+246,João Calvino,1564,1509-1564
+247,Michel Montaigne,1592,1533-1592
+248,William Gilbert,1603,1540-1603
+249,Miguel de Cervantes,1616,1547-1616
+250,Edmund Spenser,1599,1552-1599
+251,Francis Bacon,1626,1534-1626
+252,William Shakespeare,1616,1564-1616
+253,Galileu Galilei,1642,1564-1642
+254,Johannes Kepler,1630,1571-1630
+255,William Harvey,1657,1578-1657
+256,Thomas Hobbes,1679,1588-1679
+257,René Descartes,1650,1596-1650
+258,John Milton,1674,1608-1674
+259,Molière,1673,1622-1673
+260,Blaise Pascal,1662,1623-1662
+261,Christiaan Huygens,1695,1629-1695
+262,Espinosa,1677,1632-1677
+263,John Locke,1704,1632-1704
+264,Jean Baptiste Racine,1699,1639-1699
+265,Issac Newton,1727,1642-1727
+266,Gootfried Wilhem von Leibiz,1716,1646-1716
+267,Daniel Defoe,1731,1660-1731
+268,Jonathan Swift,1745,1667-1745
+269,William Congreve,1729,1670-1729
+270,George Berkeley,1753,1685-1753
+271,Alexander Pope,1744,1688-1744
+272,Charles de Secondat,1755,1689-1755
+273,Voltaire,1778,1694-1778
+274,Henry Fielding,1754,1707-1754
+275,Samuel Johnson,1784,1709-1784
+276,David Hume,1776,1711-1776
+277,Jean Jacques Rousseau,1778,1712-1778
+278,Laurence Sterne,1768,1713-1768
+279,Adam Smith,1790,1723-1790
+280,Immanuel Kant,1804,1724-1804
+281,Edward Gibbon,1794,1737-1794
+282,James Boswell,1795,1740-1795
+283,Antoine Laurent Lavoisier,1794,1743-1794
+284,"John Jay , James Madison, Alexander Hamilton",1787,século XVIII
+285,Jeremy Bentham,1832,1748-1832
+286,Johann Wolfgang von Goethe,1832,1749-1832
+287,Jean-Baptiste Joseph Fourier,1830,1768-1830
+288,Georg Wilhelm Friedrich Hegel,1831,1770-1831
+289,William Wordsworth,1850,1770-1850
+290,Samuel Taylor Coleridge,1834,1772-1834
+291,Jane Austen,1817,1775-1817
+292,Karl von Clausewitz,1831,1780-1831
+293,Stendhal,1842,1783-1842
+294,Lord Byron,1824,1788-1824
+295,Arthur Schopenhauer,1860,1788-1860
+297,Charles Lyell,1867,1797-1867
+298,Auguste Comte,1857,1798-1857
+299,Honoré de Balzac,1850,1799-1850
+300,Ralph Waldo Emerson,1882,1803-1882
+301,Nathaniel Hawthrone,1864,1804-1864
+302,Alexis de Tocqueville,1859,1805-1859
+303,John Stuart Mill,1873,1806-1873
+304,Charles Darwin,1882,1809-1882
+305,Charles Dickens,1870,1812-1870
+306,Claude Bernand,1878,1813-1878
+307,Henry David Thoreau,1883,1817-1883
+308,Karl Marx,1883,1818-1883
+309,George Eliot,1880,1819-1880
+310,Fiódor Dostoiévski,1881,1821-1881
+311,Gustave Flaubert,1880,1821-1880
+312,Henrik Ibsen,1906,1828-1906
+313,Leon Tolstói,1910,1828-1910
+314,Mark Twain,1910,1835-1910
+315,William James,1910,1842-1910
+316,Henry James,1916,1843-1916
+317,Friedrich Wilhelm Nietzsche,1900,1844-1900
+318,Jules Henri Poincaré,1912,1854-1912
+319,Sigmund Freud,1939,1856-1939
+320,George Bernand Shaw,1950,1856-1950
+321,Max Planck,1947,1858-1947
+322,Henri Bergson,1941,1859-1941
+323,John Dewey,1952,1859-1952
+324,Alfred North Whitehead,1947,1861-1947
+325,George Santayana,1952,1863-1952
+326,Lênin,1924,1870-1924
+327,Marcel Proust,1922,1871-1922
+328,Bertrand Russel,1970,1872-1970
+329,Thomas Mann,1955,1875-1955
+330,Albert Einstein,1955,1879-1955
+331,James Joyce,1941,1882-1941
+332,Jacques Maritain,1973,1882-1973
+333,Franz Kafka,1924,1883-1924
+334,Arnold Toynbee,1975,1889-1975
+335,Jean-Paul Sartre,1980,1905-1980
+336,Alexander Soljenítsin,2008,1918-2008
+296,Michael Faraday,1867,1791-1867

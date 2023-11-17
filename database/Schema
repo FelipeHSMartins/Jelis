@@ -1,0 +1,32 @@
+CREATE TABLE autor (
+	id SERIAL PRIMARY KEY,
+	nome VARCHAR(300) NOT NULL,
+	ano_aprox INT NOT NULL,
+	periodo VARCHAR(45)
+);
+
+CREATE TABLE livro (
+	id SERIAL PRIMARY KEY,
+	titulo VARCHAR(300) NOT NULL,
+	id_autor INT REFERENCES autor(id) ON DELETE CASCADE
+);
+
+CREATE TABLE ficha_de_leitura (
+	id SERIAL PRIMARY KEY,
+	id_livro INT REFERENCES livro(id) ON DELETE CASCADE
+	status CHAR(2)
+);
+
+CREATE TABLE categoria (
+	id SERIAL PRIMARY KEY,
+	nome VARCHAR(45) NOT NULL,
+	id_ficha_de_leitura INT REFERENCES ficha_de_leitura(id) ON DELETE CASCADE
+);
+
+CREATE TABLE nota (
+	id SERIAL PRIMARY KEY,
+	titulo VARCHAR (300),
+	conteudo TEXT,
+	id_categoria INT REFERENCES categoria(id) ON DELETE CASCADE
+);
+

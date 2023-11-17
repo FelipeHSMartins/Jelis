@@ -1,0 +1,86 @@
+<%- include('./partials/header.ejs') %>
+
+<!-- Novo Livro -->
+<section id="novo-livro" class="py-5 mb-5">
+
+    <div class="container">
+        <form class="form-control py-5" action="/svLivro" method="post">
+            <h1 class="ms-1 mb-5">Adicionar Novo Livro</h1>
+
+            <!-- Título do Livro -->
+            <h2 class="ms-1">Título:</h2>
+            <div class="form-floating mb-3 mx-1">
+                <input name="titulo" type="text" class="form-control" id="floatingInput" placeholder="Título do Livro" required autocomplete="off">
+                <label for="floatingInput">Título do Livro</label>
+            </div>
+            
+            <!-- Accordion -->
+            <h2 class="ms-1 mt-5">Autor:</h2>
+            <div class="accordion mx-1" id="accordionPanelsStayOpenExample">
+
+                <!-- Usar autor existente -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                            Usar Autor Existente
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                        <div class="accordion-body">
+                            <div class="form-check form-switch">
+                                <input name="tipoAutor" value="existente" class="form-check-input" type="radio" role="switch" id="flexSwitchCheckChecked" checked>
+                                <label class="form-check-label fs-4 mb-3" for="flexSwitchCheckChecked">Usar autor existente</label>
+                            </div>
+                            <select name="idAutor" class="form-select" aria-label="Default select example">
+                                <option selected>Selecione o Autor</option>
+                                <% autores.forEach((autor) =>{ %>
+                                    <option value="<%= autor.id %>"><%= autor.nome %></option>
+                                <% }); %>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Criar novo autor -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                            Criar Novo Autor
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            <div class="form-check form-switch mb-3">
+                                <input name="tipoAutor" value="novo"  class="form-check-input" type="radio" role="switch" id="flexSwitchCheckChecked">
+                                <label class="form-check-label fs-4" for="flexSwitchCheckChecked">Criar um novo autor</label>
+                            </div>
+                            <div class="form-floating mb-3 mx-1">
+                                <input name="nomeAutor" type="text" class="form-control" id="floatingInput" placeholder="Nome do Autor">
+                                <label for="floatingInput">Nome do Autor</label>
+                            </div>
+                            <div class="form-floating mb-3 mx-1">
+                                <input name="nascAutor" type="number" class="form-control" id="floatingInput" placeholder="Ano de Nascimento">
+                                <label for="floatingInput">Ano de Nascimento (ex: 1400)</label>
+                            </div>
+                            <div class="form-floating mb-3 mx-1">
+                                <input name="falesAutor" type="number" class="form-control" id="floatingInput" placeholder="Ano de Falecimento">
+                                <label for="floatingInput">Ano de Falecimento (ex: 1475)</label>
+                            </div>
+                            Use negativos para antes de Cristo (Por exemplo, usar -300 para 300 a.C).
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-end mx-1 my-4">
+                <button type="submit" class="btn btn-success btn-lg">Adicionar Livro</button>
+            </div>
+        </form>
+    </div>
+
+</section>
+
+
+
+
+<%- include('./partials/footer.ejs') %>

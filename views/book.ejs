@@ -1,0 +1,122 @@
+<%- include('./partials/header.ejs') %>
+
+
+<!---- Hero do Livro -------->
+<section id="livro" class="py-5">
+    <div class="px-4 py-5 my-5 text-center">
+        <h1 class="display-2 fw-bold text-body-emphasis"><%= livro['titulo'] %></h1>
+        <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4 fs-3"><%= livro['nome'] %></p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mt-5">
+                <% if (leitura.length > 0) { %>
+                  <a href="/leitura?id=<%= leitura[0]['id'] %>"><button type="button" class="btn btn-success btn-lg px-4 gap-3">Continuar Leitura</button></a>
+                <% } else { %>
+                  <form action="/svLeitura" method="post">
+                    <input name="idLivro"  value="<%= livro['id_livro'] %>" type="text" hidden>
+                    <button type="submit" class="btn btn-success btn-lg px-4 gap-3">Começar Leitura</button> 
+                  </form>
+                <% } %>
+                <button type="button" class="btn btn-outline-secondary btn-lg px-4" data-bs-toggle="modal" data-bs-target="#editModal">Editar Título</button>
+                <button type="button" class="btn btn-outline-danger btn-lg px-4 gap-3" data-bs-toggle="modal" data-bs-target="#delModal">Excluir Livro</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!---- Pesquisar Livro -------->
+<section id="pesquisar-livro">
+    <div class="container px-4 py-5" id="featured-3">
+        <h2 class="pb-2 border-bottom">Buscar livro:</h2>
+        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+          <div class="feature col">
+            <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                <img src="/images/google.svg" alt="Google Icon" height="40" width="40">
+            </div>
+            <h3 class="fs-2 text-body-emphasis">Pesquisar no Google</h3>
+            <p>Busque informações sobre <strong><%= livro['titulo'] %></strong> na internet.</p>
+            <a href="https://www.google.com/search?q=<%= livro['titulo'] %>+<%= livro['nome'] %>" target="_blank" class="icon-link">
+              Buscar
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+              </svg>
+            </a>
+          </div>
+          <div class="feature col">
+            <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                <img src="/images/amazon.svg" alt="Amazon Icon" height="40" width="40">
+            </div>
+            <h3 class="fs-2 text-body-emphasis">Pesquisar na Amazon</h3>
+            <p>Verifique os preços de <strong><%= livro['titulo'] %></strong> na Amazon.</p>
+            <a href="https://www.amazon.com.br/s?k=<%= livro['titulo'] %>+<%= livro['nome'] %>" target="_blank" class="icon-link">
+              Buscar
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+              </svg>
+            </a>
+          </div>
+          <div class="feature col">
+            <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+              <img src="/images/buildings-fill.svg" alt="Amazon Icon" height="40" width="40">
+            </div>
+            <h3 class="fs-2 text-body-emphasis">Arquivo Público</h3>
+            <p>Verificar se <strong><%= livro['titulo'] %></strong> está disponível no arquivo público.</p>
+            <a href="https://archive.org/search?query=<%= livro['titulo'] %>+<%= livro['nome'] %>" class="icon-link" target="_blank">
+              Buscar
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+</section>
+
+<!---- Editar Livro -------->
+
+  <!-- Modal Editar Livro -->
+  <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="editModalLabel">Editar Título</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form class="py-3" action="/edLivro" method="post">
+          <div class="modal-body">
+              <label for="tituloLivro">Título:</label>
+              <input type="text" name="idLivro" hidden value="<%= livro['id_livro'] %>">
+              <input class="form-control p-2 me-3" id="tituloLivro" name="tituloLivro" type="text" value="<%= livro['titulo'] %>" required autocomplete="off">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary">Confirmar Alterações</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Excluir Livro -->
+<div class="modal fade" id="delModal" tabindex="-1" aria-labelledby="delModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="delModalLabel">Excluir Livro</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Você tem certeza que deseja excluir este livro? <strong>Esta ação é irreversível!</strong></p>
+        <p>Além disso também serão excluídas quaisquer anotações feitas sobre esta obra (caso existam).</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <form action="/delLivro" method="post">
+          <input name="idLivro" value="<%= livro['id_livro'] %>" type="text" hidden>
+          <button type="submit" class="btn btn-danger">Excluir</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('./partials/footer.ejs') %>

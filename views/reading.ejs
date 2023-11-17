@@ -1,0 +1,253 @@
+<%- include('./partials/header.ejs') %>
+
+<section id="livro-info">
+    <div class="container mt-5">
+        <h1 class="display-3"><%= ficha.titulo %></h1>
+    </div>
+    
+    <!---- Main Content -------->
+    <div class="container mt-5">
+        <!---- Navegação de Cagorias -------->
+        <ul class="nav nav-tabs">
+            <% categorias.forEach((categoria) => { %>
+                <li class="nav-item">
+                    <% if (categoria.id == categoriaAtual) { %>
+                        <a class="nav-link active" aria-current="page" href="/leitura?id=<%= ficha.id %>&cat=<%= categoria.id %>"><%= categoria.nome %></a>
+                    <% } else { %>
+                        <a class="nav-link" aria-current="page" href="/leitura?id=<%= ficha.id %>&cat=<%= categoria.id %>"><%= categoria.nome %></a>
+                    <% } %>
+                </li>
+            <% }); %>
+            <li class="nav-item">
+                <input class="nav-link fs-5" data-bs-toggle="modal" data-bs-target="#adCategoriaModal" value="+" type="button">
+            </li>
+        </ul>
+
+            
+
+        
+        <div class="container d-inline-flex justify-content-between align-items-center">
+            <!---- Adicionar Notas -------->
+            <button type="button" class="btn btn-outline-primary mt-5 " data-bs-toggle="modal" data-bs-target="#adModal">Adicionar Nota</button>
+
+            <!---- Editar Ficha -------->
+            <div>
+                <p class="d-inline-flex m-0 align-items-center">
+                    <a data-bs-toggle="collapse" href="#multiCollapseGear" role="button" aria-expanded="false" aria-controls="multiCollapseGear"><img src="/images/gear-fill.svg" alt="ícone para editar ficha" height="20"></a>
+                </p>
+                <div class="collapse multi-collapse" id="multiCollapseGear">
+                    <div class="card card-body">
+                        <strong>MAIS OPÇÕES:</strong>
+                        <br>
+                        Categoria:
+                        <button type="button" class="btn btn-outline-secondary mt-2" data-bs-toggle="modal" data-bs-target="#renameCatModal">Renomear Categoria</button>
+                        <button type="button" class="btn btn-outline-danger my-2" data-bs-toggle="modal" data-bs-target="#excluirCatModal">Excluir Categoria</button>
+                        <hr>
+                        Ficha:
+                        <button type="button" class="btn btn-outline-danger mt-2" data-bs-toggle="modal" data-bs-target="#delFichaModal">Excluir Ficha</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+
+        <!---- Notas -------->
+        <div class="container border mt-2">
+        <% if (notas.length > 0) { %>
+            <% notas.forEach((nota) => { %>
+                <div class="row my-4 px-3 text-justify border-bottom">
+                    <h2 class="display-6" style="letter-spacing: .5px;"><a style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#edModal<%= nota.id %>"><img src="/images/pencil-square.svg" height="20"></a> <%= nota.titulo %></h2>
+                    <p class="fs-5" style="white-space: pre-wrap; text-align: justify; letter-spacing: .3px;"><%= nota.conteudo %></p>
+                </div>
+            <% }); %>
+        <% } else { %>
+            <h2 class="my-5">Nenhuma nota ainda... 💭</h2>
+        <% } %>
+        <div class="text-center mb-3">
+            <a href="#livro-info">Voltar ao topo</a>
+        </div>
+        </div>
+    </div>
+</section>
+
+  <!-- Renomear Categoria Modal -->
+<div class="modal fade" id="renameCatModal" tabindex="-1" aria-labelledby="renameCatModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="renameCatModalLabel">Renomear Categoria</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <% categorias.forEach((categoria) => { %>
+                <% if (categoria.id == categoriaAtual) { %>
+                    <form action="/edCat" method="post">
+                        <div class="modal-body">
+                            <input name="idCategoria"type="text" hidden value="<%= categoria.id %>">
+                            Nome da Categoria: 
+                            <input name="nome" class="form-control" placeholder="Título" type="text" autocomplete="off" value="<%= categoria.nome %>">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                        </div>
+                    </form>
+                <% } %>
+            <% }); %>
+        </div>
+    </div>
+</div>
+
+<!-- Excluir Categoria Modal -->
+<div class="modal fade" id="excluirCatModal" tabindex="-1" aria-labelledby="excluirCatModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="/delCat" method="post">
+                <% categorias.forEach((categoria) => { %>
+                    <% if (categoria.id == categoriaAtual) { %>
+                        <input type="text" name="idCategoria" hidden value="<%= categoria.id %>">
+                        <input type="text" name="idFicha" hidden value="<%= ficha.id %>">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="excluirCatModalLabel">Excluir Categoria</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <% if (categorias.length <= 1) { %>
+                                <div class="modal-body">
+                                    <strong>
+                                        A categoria <i><%= categoria.nome %></i> não pode ser excluida!<br>
+                                        <br>
+                                        É preciso que haja pelo menos uma categoria por ficha de leitura!
+                                    </strong>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                </div>
+                            <% } else { %>
+                                <div class="modal-body">
+                            
+                                    <strong>
+                                        Excluir a categoria: <i><%= categoria.nome %></i> ?<br>
+                                        <br>
+                                        Todas as notas sob esta categoria serão perdidas!
+                                    </strong>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="submit" class="btn btn-danger">Excluir</button>
+                                </div>
+                            <% } %>
+                        
+                    <% } %>
+                <% }); %>
+            </form>  
+        </div>
+    </div>
+  </div>
+
+  <!-- Adicionar Nota Modal -->
+  <div class="modal fade" id="adModal" tabindex="-1" aria-labelledby="adModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="adModalLabel">Adicionar Nota</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form method="post" action="/svNota">
+            <div class="modal-body">
+                <input name="idCategoria" type="text" hidden value="<%= categoriaAtual %>">
+                <input name="titulo" class="w-100 my-1 form-control"  type="text" placeholder="O Título da Nota" autocomplete="off">
+                <textarea name="conteudo" class="w-100 form-control" id="conteudo" cols="30" rows="10" style="resize: none; white-space-collapse: preserve" placeholder="Conteúdo da Nota"></textarea>  
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-primary">Adicionar</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Adicionar Categoria Modal -->
+  <div class="modal fade" id="adCategoriaModal" tabindex="-1" aria-labelledby="adCategoriaModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="adCategoriaModalLabel">Nova Categoria</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="/adCategoria" method="post">
+            <div class="modal-body">
+                <input name="nome" class="form-control w-100" type="text" placeholder="Nome da Categoria" autocomplete="off">
+                <input name="idFicha" hidden value="<%= ficha.id %>" type="text">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-primary">Criar</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+    <!-- Editar Nota Modal -->
+    <% notas.forEach((nota) => { %>
+        <div class="modal fade" id="edModal<%= nota.id %>" tabindex="-1" aria-labelledby="edModal<%= nota.id %>Label" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="edModal<%= nota.id %>Label">Editar Nota</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form method="post" action="/edNota">
+                    <div class="modal-body">
+                        <input name="idNota" type="text" hidden value="<%= nota.id %>">
+                        <input class="w-100 my-1 form-control" name="titulo" type="text" placeholder="O Título da Nota" value="<%= nota.titulo %>" autocomplete="off">
+                        <textarea name="conteudo" class="w-100 form-control" id="conteudo" cols="30" rows="10" style="resize: none;" placeholder="Conteúdo da Nota"><%= nota.conteudo %></textarea>  
+                    </div>
+                    <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                    </div>
+                </form>
+                <!-- Delete Note Button -->
+                <hr>
+                <p class="container d-inline-flex justify-content-end">
+                    <a class="btn btn-outline-danger" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Excluir Nota</a>
+                    <div class="collapse multi-collapse" id="multiCollapseExample1">
+                        <div class="card card-body text-center">
+                            <strong class="mb-2">Tem certeza? Esta ação é irreversível!</strong>
+                            <form action="/delNota" method="post">
+                                <input name="idNota" value="<%= nota.id %>" type="text" hidden>
+                                <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">Excluir Mesmo Assim</button>
+                            </form>
+                        </div>
+                    </div>
+                </p>
+              </div>
+            </div>
+          </div>
+    <% }); %>
+  
+    <!-- Excluir Ficha Modal -->
+    <div class="modal fade" id="delFichaModal" tabindex="-1" aria-labelledby="delFichaModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="delFichaModalLabel">Excluir Ficha</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="/delLeitura" method="post">
+                <input name="idFicha" value="<%= ficha.id %>" type="text" hidden>
+                <div class="modal-body">
+                    <span class="fs-4">Tem certeza que deseja a ficha? <strong>Todas as suas anotações serão perdidas!</strong></span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-danger">Excluir FICHA</button>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+<%- include('./partials/footer.ejs') %>

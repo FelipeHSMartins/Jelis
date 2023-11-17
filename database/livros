@@ -1,0 +1,353 @@
+id,titulo,id_autor
+1,Ilíada,201
+2,Odisseia,201
+3,Velho Testamento,202
+4,Os Persas,203
+5,Sete contra Tebas,203
+6,As Suplicantes,203
+7,Oresteia,203
+8,Agamêmnom,203
+9,As Coéforas,203
+10,As Eumênides,203
+11,Ájax,204
+12,Antígona,204
+13,As Traquínias,204
+14,Édipo Rei,204
+15,Electra,204
+16,Filoctetes,204
+17,Édipo em Colono,204
+18,Histórias,205
+19,Alceste,206
+20,Medeia,206
+21,Os Heráclidas,206
+22,Hipólito,206
+23,Andrômaca,206
+24,Hécuba,206
+25,As Suplicantes,206
+26,Electra,206
+27,Héracles,206
+28,As Troianas,206
+29,Ifigênia em Táuris,206
+30,Íon,206
+31,Helena,206
+32,As Fenícias,206
+33,Orestes,206
+34,As Bacantes,206
+35,Ifigênia em Aúlide,206
+36,História da Guerra do Peloponeso,207
+37,Corpus Hippocraticum,208
+38,As Nuvens,209
+39,Os Pássaros,209
+40,As Rãs,209
+41,Lisístrata,209
+42,Os Cavaleiros,209
+43,A Paz,209
+44,As Tesmoforiantes,209
+45,Um Deus chamado Dinheiro,209
+46,República,210
+47,Banquete,210
+48,Fédon,210
+49,Mênon,210
+50,Apologia de Sócrates,210
+51,Fedro,210
+52,Protágoras,210
+53,Górgias,210
+54,Sofista,210
+55,Teeteto,210
+56,Organon,211
+57,Física,211
+58,Metafísica,211
+59,Da Alma,211
+60,Ética a Nicômaco,211
+61,Política,211
+62,Retórica,211
+63,Poética,211
+64,Carta a Heródoto,212
+65,Carta a Meneceu,212
+66,Os Elementos,213
+67,Do Equilíbrio dos Planos,214
+68,Dos Flutuantes,214
+69,O Arenário,214
+70,As Cônicas,215
+71,Orações,216
+72,Da Amizade,216
+73,Sobre a Velhice,216
+74,Sobre a Natureza das Coisas,217
+75,Eneida,218
+76,Bucólicas,218
+77,Geórgicas,218
+78,Odes,219
+79,Epodos,219
+80,A Arte da Poesia,219
+81,História de Roma,220
+82,Metamorfoses,221
+83,Amores,221
+84,Heroides,221
+85,Consolatio ad Liviam sive Epicedion Drusi,221
+86,Medicamina Faciei Femineae,221
+87,Ars Amatoria,221
+88,Remedia Amoris,221
+89,Medea,221
+90,Fastos,221
+91,Íbis,221
+92,Tristia,221
+93,Epistulae ex Ponto,221
+94,Halieutica,221
+95,Nux,221
+96,Vidas dos Nobres Gregos e Romanos,222
+97,Moralia,222
+98,Histórias,223
+99,Anais,223
+100,Agrícola,223
+101,Germânia,223
+102,Introdução à Aritmética,224
+103,Discursos,225
+104,Enchyridion (Manual),225
+105,Almagesto,226
+106,Sobre o Modo de Escrever História,227
+107,Uma História Verídica,227
+108,Leilão de Vidas,227
+109,Meditações,228
+110,Sobre as Faculdades Naturais,229
+111,Novo Testamento,230
+112,Enéadas,231
+113,Sobre o Ensino,232
+114,Confissões,232
+115,A Cidade de Deus,232
+116,A Doutrina Cristã,232
+117,A Canção de Rolando,233
+118,A Canção do Nibelungo,234
+119,A Saga de Njal,235
+120,Suma Teológica,236
+121,Vida Nova,237
+122,Sobre a Monarquia,237
+123,A Divina Comédia,237
+124,Troilo e Créssida,238
+125,Os Contos de Canterbury,238
+126,Cadernos,239
+127,O Príncipe,240
+128,Discursos sobre a Primeira Década de Tito Lívio,240
+129,O Elogio da Loucura,241
+130,Sobre as Revoluções das Esferas Celestiais,242
+131,Utopia,243
+132,Três Tratados,244
+133,Conversas à Mesa,244
+134,François Rabelais,245
+135,Institutos da Religião Cristã,246
+136,Ensaios,247
+137,Sobre o Imã e os Corpos Magnéticos,248
+138,Dom Quixote,249
+139,Protalâmio,250
+140,A Rainha das Fadas,250
+141,Ensaios,251
+142,A Evolução do Aprendizado,251
+143,Novo Organum,251
+144,Nova Atlântida,251
+145,Obras,252
+146,O Mensageiro das Estrelas,253
+147,Duas Ciências Novas,253
+148,Epítome da Astronomia de Copérnico,254
+149,Sobre a Harmonia do Mundo,254
+283,O que é Arte?,313
+150,Sobre o Movimento do Coração de do Sangue nos Animais,255
+151,Sobre a Circulação do Sangue,255
+152,Sobre a Geração dos Animais,255
+153,Leviatã,256
+154,Regras para a Direção da Mente,257
+155,Discurso sobre o Método,257
+156,Geometria,257
+157,Meditações sobre a Primeira Filosofia,257
+158,Poemas Curtos,258
+159,Areopagitica,258
+160,Paraíso Perdido,258
+161,Samson Agonistes,258
+162,O Misantropo,259
+163,Escola de Mulheres,259
+164,O Doente Imaginário,259
+165,Tartufo,259
+166,As Cartas da Província,260
+167,Pensamentos,260
+168,Tratados Científicos,260
+169,Tratado sobre a Luz,261
+170,Ética,262
+171,Carta sobre a Tolerância,263
+172,Sobre o Governo Civil,263
+173,Ensaio sobre o Entendimento Humano,263
+174,Alguns Pensamentos sobre Educação,263
+175,Andrômaca,264
+176,Fedra,264
+177,Philosophiae Naturalis Principia Mathematica,265
+178,Óptica,265
+179,Discurso de Metafísica,266
+180,Novos Ensaios sobre o Entendimento Humano,266
+181,A Monadologia,266
+182,Robinson Crusoé,267
+183,História de um Tonel,268
+184,Diário para Stella,268
+185,As Viagens de Gulliver,268
+186,Modesta Proposição,268
+187,Assim Vai o Mundo,269
+188,Tratado sobre os Princípios do Conhecimento Humano,270
+189,Ensaio sobre a Crítica,271
+190,O Rapto da Madeixa,271
+191,Ensaio sobre o Homem,271
+192,Cartas Persas,272
+193,O Espírito das Leis,272
+194,Cartas Filosóficas,273
+195,Cândido,273
+196,Dicionário Filosófico,273
+197,Joseph Andrews,274
+198,Tom Jones,274
+199,A Vaidade dos Desejos Humanos,275
+200,Dicionário,275
+201,"A História de Rasselas, Príncipe da Abissínia",275
+202,Vidas dos Poetas Ingleses,275
+203,Tratado sobre a Natureza Humana,276
+204,Ensaios Morais e Políticos,276
+205,Uma Investigação sobre o Entendimento Humano,276
+206,Discurso sobre a Origem da Desigualdade,277
+207,Discurso sobre a Economia Política,277
+208,Emílio,277
+209,O Contrato Social,277
+210,Tristram Shandy,278
+211,Viagem Sentimental através da França e da Itália,278
+212,Teoria dos Sentimentos Morais,279
+213,Riqueza das Nações,279
+214,Crítica da Razão Pura,280
+215,Princípios Fundamentais da Metafísica da Moral,280
+216,Crítica da Razão Prática,280
+217,Doutrina do Direito,280
+218,Crítica da Faculdade do Juízo,280
+219,A Paz Perpétua,280
+220,Declínio e Queda do Império Romano,281
+221,Autobiografia,281
+222,Journal,282
+223,Vida de Samuel Johnson,282
+224,Elementos da Química,283
+225,O Federalista,284
+226,Artigos da Confederação,284
+227,Constituição dos Estados Unidos,284
+228,Declaração de Independência,284
+229,Uma Introdução aos Princípois da Moral e da Legislação,285
+230,Teoria das Ficções,285
+231,Fausto,286
+232,Poesia de Verdade,286
+233,Teoria Analítica do Calor,287
+234,Fenomenologia do Espírito,288
+235,Princípios da Filosofia do Direito,288
+236,Filosofia da História,288
+237,Poemas,289
+238,Poemas,290
+239,Biografia Literária,290
+240,Orgulho e Preconceito,291
+241,Emma,291
+242,Sobre a Guerra,292
+243,O Vermelho e o Negro,293
+244,A Cartuxa de Parma,293
+245,Sobre o Amor,293
+246,Don Juan,294
+247,Estudos sobre o Pessimismo,295
+248,A História Química de uma Vela,296
+249,Pesquisas Experimentais em Eletricidade,296
+250,Princípios de Geologia,297
+251,Curso de Filosofia Positiva,298
+252,O Pai Goriot,299
+253,Eugénie Grandet,299
+254,Homens Representativos,300
+255,Ensaios,300
+256,Diário,300
+257,A Letra Escarlate,301
+258,A Democracia na América,302
+259,Sistema de Lógica Dedutiva e Indutiva,303
+260,Sobre a Liberdade,303
+261,Considerações sobre o Governo Representativo,303
+262,Utilitarismo,303
+263,Autobiografia,303
+264,A Origem das Espécies,304
+265,A Descendência do Homem,304
+266,Autobiografia,304
+267,Obras,305
+268,Uma Introdução ao Estudo da Medicina Experimental,306
+269,Desobediência Civil,307
+270,Walden,307
+271,O Capital,308
+272,O Manifesto Comunista,308
+273,Adam Bede,309
+274,Middlemarch,309
+275,Crime e Castigo,310
+276,O Idiota,310
+277,Os Irmãos Karamázov,310
+278,Madame Bovary,311
+279,Três Histórias,311
+280,Peças,312
+281,Guerra e Paz,313
+282,Anna Karenina,313
+284,Contos,313
+285,As Aventuras de Huckleberry Finn,314
+286,The Mysterious Stranger,314
+287,Princípios de Psicologia,315
+288,As Variedades da Experiência Religiosa,315
+289,Pragmatismo,315
+290,Ensaios de Empirismo Radical,315
+291,Os Americanos,316
+292,Os Embaixadores,316
+293,Assim Falou Zaratustra,317
+294,Além do Bem e do Mal,317
+295,Genealogia da Moral,317
+296,Vontade de Potência,317
+297,Ciência e Hipótese,318
+298,Ciência e Método,318
+299,As Interpretações dos Sonhos,319
+300,Conferências Introdutórias,319
+301,O Mal-Estar da Civilização,319
+302,Novas Conferências Introdutórias à Psicanálise,319
+303,Homem e Super Homem,320
+304,Major Barbara,320
+305,César e Cleópatra,320
+306,Pigmalião,320
+307,Santa Joana,320
+308,Origin and Development of the Quantum Theory,321
+309,Where is Science Going?,321
+310,Scientific Autobiografy,321
+311,Time and Free Will,322
+312,Matéria e Memória,322
+313,A Evolução Criadora,322
+314,As Duas Fontes da Moralidade e da Religião,322
+315,Como Nós Pensamos,323
+316,Democracia e Educação,323
+317,Experiência e Natureza,323
+318,Lógica – a Teoria da Investigação,323
+319,Introdução à Matemática,324
+320,A Ciência e o Mundo Moderno,324
+321,Os Fins da Educação e Outros Ensaios,324
+322,Aventuras das Ideias,324
+323,A Vida da Razão,325
+324,Skepticism and Animal Faith,325
+325,Persons and Places,325
+326,O Estado e a Revolução,326
+327,Em Busca do Tempo Perdido,327
+328,Os Problemas da Filosofia,328
+329,Análise da Mente,328
+330,An Inquiry into Meaning and Truth,328
+331,"Human Knowledge, Its Scope and Limits",328
+332,A Montanha Mágica,329
+333,José e seus Irmão,329
+334,O Significado da Relatividade,330
+335,Sobre o Método da Física Teórica,330
+336,A Evolução da Física,330
+337,Os Mortos,331
+338,Retrato do Artista Quando Jovem,331
+339,Ulisses,331
+340,Arte e Escolástica,332
+341,Os Graus do Conhecimento,332
+342,Os Direitos do Homem e a Lei Natural,332
+343,Humanismo Integral,332
+344,O Processo,333
+345,O Castelo,333
+346,Um Estudo da História,334
+347,A Civilização em Julgamento,334
+348,A Náusea,335
+349,Entre Quatro Paredes,335
+350,O Ser e o Nada,335
+351,O Primeiro Círculo,336
+352,Pavilhão dos Cancerosos,336

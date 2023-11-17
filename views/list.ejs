@@ -1,0 +1,142 @@
+<%- include('./partials/header.ejs') %>
+
+
+
+
+
+
+<!---- Lista de Leituras Recentes-------->
+    <section id="lista" class="py-5">
+        
+
+        <% if (autores.length > 0) { %>
+            <h1 class="display-4 ms-5">Lista de Livros:</h1>
+            <!---- Filtros, Busca, Paginação -------->
+            <div class="container d-flex align-items-center d-flex justify-content-between my-5 bg-body-tertiary p-5 rounded-3">
+    
+    
+                <!---- Barra de Busca -------->
+                <form class="d-flex" role="search" method="get" action="/pesquisar">
+                    <input name="q" class="form-control me-2" type="search" placeholder="Pesquisar Livro" aria-label="Search" autocomplete="off">
+                    <button class="btn btn-outline-primary" type="submit">Pesquisar</button>
+                </form>
+    
+                <!---- Botão de Sorting -------->
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Ordenar por...
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="/livros?order=adp">Adicionados Primeiro</a></li>
+                      <li><a class="dropdown-item" href="/livros?order=adu">Adicionados por Último</a></li>
+                      <li><a class="dropdown-item" href="/livros?order=alf">Ordem Alfabética</a></li>
+                      <li><a class="dropdown-item" href="/livros?order=cro">Ordem Cronológica</a></li>
+                    </ul>
+                </div>
+    
+                <!---- Menu de Paginação -------->
+                <nav class="d-none d-xl-block" aria-label="Page navigation">
+                    <ul class="pagination align-items-center m-0">
+                        <% if (currentPage === 1) { %>
+                            <li class="page-item disabled">
+                                <a class="page-link" href="/livros?page=<%= currentPage - 1 %>&order=<%= currentOrder %>">Anterior</a>
+                            </li>
+                        <% } else { %>
+                            <li class="page-item">
+                                <a class="page-link" href="/livros?page=<%= currentPage - 1 %>&order=<%= currentOrder %>">Anterior</a>
+                            </li>
+                        <% } %>
+                        <% for (let i = 1; i <= totalPages; i++) { %>
+                            <% if (currentPage === i) { %>
+                                <li class="page-item active"><a class="page-link" href="/livros?page=<%= i %>&order=<%= currentOrder %>"><%= i %></a></li>
+                            <% } else { %>
+                                <li class="page-item"><a class="page-link" href="/livros?page=<%= i %>&order=<%= currentOrder %>"><%= i %></a></li>
+                            <% } %>
+                        <% } %>
+                        <% if (currentPage === totalPages) { %>
+                            <li class="page-item disabled">
+                                <a class="page-link" href="/livros?page=<%= currentPage + 1 %>&order=<%= currentOrder %>">Próximo</a>
+                            </li>
+                        <% } else { %>
+                            <li class="page-item">
+                                <a class="page-link" href="/livros?page=<%= currentPage + 1 %>&order=<%= currentOrder %>">Próximo</a>
+                            </li>
+                        <% } %>
+                    </ul>
+                </nav>
+    
+    
+            </div>
+    
+            
+            <!---- Lista de Elementos -------->
+            <div class="d-flex flex-column p-4 gap-4 py-md-5 align-items-center justify-content-evenly">
+                <% autores.forEach((autor) => { %>
+                    <div class="full-list list-group">
+                        <h6 class="mb-0 ms-1 fs-3"><%= autor.nome %> (<%= autor.periodo %>):</h6>
+                        <% autor.livros.forEach((livro) => { %>
+                            <a href="livro?id=<%= livro.id %>" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between">
+                                    <div>
+                                        <p class="mb-0 opacity-75 my-1 fs-5"><%= livro.titulo %></p>
+                                    </div>
+                                </div>
+                            </a>
+                        <% }); %>
+                    </div>
+                <% }); %>
+    
+    
+            </div>
+
+
+            <!---- Menu de Paginação Inferior -------->
+            <div class="d-flex justify-content-end pe-5 align-items-center">
+                <a class="my-0 me-5" href="#lista">Topo da Página</a>
+                <nav class="me-5" aria-label="Page navigation">
+                    <ul class="pagination align-items-center m-0">
+                        <% if (currentPage === 1) { %>
+                            <li class="page-item disabled">
+                                <a class="page-link" href="/livros?page=<%= currentPage - 1 %>&order=<%= currentOrder %>">Anterior</a>
+                            </li>
+                        <% } else { %>
+                            <li class="page-item">
+                                <a class="page-link" href="/livros?page=<%= currentPage - 1 %>&order=<%= currentOrder %>">Anterior</a>
+                            </li>
+                        <% } %>
+                        <% for (let i = 1; i <= totalPages; i++) { %>
+                            <% if (currentPage === i) { %>
+                                <li class="page-item active"><a class="page-link" href="/livros?page=<%= i %>&order=<%= currentOrder %>"><%= i %></a></li>
+                            <% } else { %>
+                                <li class="page-item"><a class="page-link" href="/livros?page=<%= i %>&order=<%= currentOrder %>"><%= i %></a></li>
+                            <% } %>
+                        <% } %>
+                        <% if (currentPage === totalPages) { %>
+                            <li class="page-item disabled">
+                                <a class="page-link" href="/livros?page=<%= currentPage + 1 %>&order=<%= currentOrder %>">Próximo</a>
+                            </li>
+                        <% } else { %>
+                            <li class="page-item">
+                                <a class="page-link" href="/livros?page=<%= currentPage + 1 %>&order=<%= currentOrder %>">Próximo</a>
+                            </li>
+                        <% } %>
+                    </ul>
+                </nav>
+            </div>
+
+
+        <% } else { %>
+                    <!---- Hero de Página Vazia -------->
+            <div class="px-4 py-5 my-5 text-center">
+                <h1 class="display-5 fw-bold text-body-emphasis">Nenhum Livro no Banco de Dados 🤔</h1>
+                <div class="col-lg-6 mx-auto">
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mt-5">
+                    <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Adicionar Livro</button>
+                </div>
+                </div>
+            </div>
+        <% } %>
+
+    </section>
+
+<%- include('./partials/footer.ejs') %>

@@ -1,0 +1,41 @@
+<%- include('./partials/header.ejs') %>
+
+<!-- Todas Leituras -->
+<section id="leituras" class="py-5">
+
+    <% if (leituras.length > 0) { %>
+    <!-- Listagem das Leituras -->
+    <div class="container mb-5">
+        <h1>Minhas Leituras:</h1>
+
+        <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
+            <div class="list-group w-75">
+                <% leituras.forEach((leitura) => { %>
+                    <a href="/leitura?id=<%= leitura.id_leitura %>" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                        <img src="/images/journal-text.svg" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+                        <div class="d-flex gap-2 w-100 justify-content-between">
+                            <div>
+                                <h6 class="mb-0"><%= leitura.titulo %></h6>
+                                <p class="mb-0 opacity-75"><%= leitura.nome %></p>
+                            </div>
+                        </div>
+                    </a>
+                <% }); %>
+            </div>
+          </div>
+
+
+    <% } else { %>
+    <!-- Lista Vazia -->
+    <div class="container my-5">
+        <h1>Nenhuma leitura ainda... 🗿</h1>
+        <p>Você pode escolher uma leitura para começar através da <a href="/livros">Lista de Livros</a>.</p>
+    </div>
+    <% } %>
+
+
+
+</section>
+
+
+<%- include('./partials/footer.ejs') %>

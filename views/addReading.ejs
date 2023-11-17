@@ -1,0 +1,46 @@
+<%- include('./partials/header.ejs') %>
+
+<!-- Nova Leitura -->
+<section id="comecar-leitura">
+
+    <!-- Usando lista em Select -->
+    <div class="px-4 pt-5 mb-5 text-center border-bottom">
+        <h1 class="display-4 fw-bold text-body-emphasis">Comece uma Nova Leitura</h1>
+        <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">Você pode começar uma nova leitura aqui ou, se preferir, pode visualizar e escolher através da <a href="/livros">lista completa de livros.</a></p>
+                <form action="/svLeitura" method="post" class="d-grid gap-2 d-sm-flex justify-content-sm-center align-items-center my-5">
+                    <select name="idLivro" class="form-select form-select-lg mb-5" aria-label="Large select example">
+                        <option selected>Selecionar Livro</option>
+                        <% livros.forEach((livro) => { %>
+                            <option value="<%= livro.id %>"><%= livro.titulo %> - <%= livro.nome %></option>
+                        <% }); %>
+                    </select>
+                    <button type="submit" class="btn btn-success btn-lg px-4 me-sm-3 mb-5">Começar Leitura</button>
+                </form>
+
+        </div>
+        <div class="overflow-hidden" style="max-height: 30vh;">
+            <div class="container px-5">
+                <img src="/images/reading-book.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Usando pesquisa -->
+<section id="leitura-pesquisa">
+    <div class="container my-5">
+        <div class="p-5 text-center bg-body-tertiary rounded-3">
+            <h2 class="text-body-emphasis">Você também pode pesquisar o livro que deseja ler!</h2>
+            <p class="lead">
+                <form class="my-5 d-flex" role="search" method="get" action="/pesquisar">
+                    <input name="q" class="form-control me-2" type="search" placeholder="Pesquisar livro ou autor" aria-label="Search" autocomplete="off">
+                    <button class="btn btn-outline-primary" type="submit">Pesquisar</button>
+                </form>
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<%- include('./partials/footer.ejs') %>

@@ -1,0 +1,40 @@
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'PT Serif', serif;
+}
+
+#hero, #sobre, #recente, #lista, #livro, #novo-livro, #comecar-leitura, #search, #leituras {
+    background-color: #d4edf1;
+}
+
+.navbar-brand {
+    font-size: 2em;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.nav-link, .dropdown-item, .search-btn, .btn {
+    font-family: 'PT Serif', serif;
+}
+
+.icon-square {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+}
+
+.res-img {
+    width: 100%;
+    height: 300px;
+    border-radius: 15px;
+}
+
+@media screen and (min-width: 900px) {
+    .full-list {
+        width: 75%;
+    }    
+}
+
+.feature-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 0.75rem;
+}
